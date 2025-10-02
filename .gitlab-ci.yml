@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-pages:
-  stage: deploy
-  script:
-    - mkdir .public
-    - cp -r * .public
-=======
+
 # Use a lightweight image for GitLab Runner
 image: alpine:latest
 
@@ -23,7 +17,6 @@ pages:
     - cp -r Build .public/Build
     # اگه پوشه StreamingAssets داری، می‌تونی اضافه کنی
     # - cp -r StreamingAssets .public/StreamingAssets
->>>>>>> 0eea1620b39643ad411b8e9ad7d608955c946c8f
   artifacts:
     paths:
       - .public
