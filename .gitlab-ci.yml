@@ -1,11 +1,21 @@
+# Use a lightweight image for GitLab Runner
 image: alpine:latest
+
+# Stage تعریف می‌کنیم
+stages:
+  - deploy
 
 pages:
   stage: deploy
   script:
-    - mkdir .public
+    # ساخت پوشه .public برای GitLab Pages
+    - mkdir -p .public
+    # کپی کردن index.html به .public
     - cp index.html .public/
+    # کپی کردن پوشه Build شامل js و wasm به .public
     - cp -r Build .public/Build
+    # اگه پوشه StreamingAssets داری، می‌تونی اضافه کنی
+    # - cp -r StreamingAssets .public/StreamingAssets
   artifacts:
     paths:
       - .public
